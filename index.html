@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Word Guess Game</title>
+    <link rel="stylessheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="assets/javascript/game.js"></script>
+
+</head>
+
+<body class= "p-3 mb-2 bg-dark text-white">
+    <div class="container">
+        <!-- JUMBOTRON!!! -->
+        <div class="row">
+            <div class="jumbotron p-3 mb-2 bg-dark text-white">
+                <img src="assets/images/logo.png" class="img-fluid" alt="Responsive image">
+            </div>
+        </div>
+        <!-- Content cards -->
+        
+        <div class="row justify-content-center">
+            <div class="col-md-3">
+               <img src="https://upload.wikimedia.org/wikipedia/en/5/50/Tyrion_Lannister-Peter_Dinklage.jpg" alt="Tyrion Lannister">
+            </div>
+            <div class="col-md-3">
+                <p>Name the house</p>
+                <p>WINS</p>
+                <p>Current Word: <span id="currentWord"></span></p>
+                <p><span id="theWord"></span></p>
+
+                <hr>
+
+                <p>Number of guesses remaining: <span id="showLives"></span></p>
+                <p>Letters Guessed:<span id="showGuesses"></span></p>
+                
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+</body>
+</html>
