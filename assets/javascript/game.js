@@ -11,6 +11,7 @@ var hiddenArray = [];
 
 // Press any key to start
 // pick random word from array of "current word"
+var randomizer = function() {
 var randomWord = words[Math.floor(Math.random() * words.length)];
     console.log("Random word is " + randomWord);
 
@@ -24,20 +25,21 @@ for (var i=0; i < randomWord.length; i++) {
 hiddenArray = randomWord.split("");
 console.log(wordArray);
 
-
+}
 // set guesses left to 15
 // set guessed letters to []
 var resetGame = function() {
     lives = 15;
     guesses= [];
     wordArray= [];
+    hiddenArray= [];
+    document.getElementById("currentWord").textContent = wordArray;
 }
 
-// function showMyLives()  {
-//     document.getElementById("showLives").textContent = (lives);
-// }
-
-// showMyLives();
+    randomizer();
+    document.getElementById("showLives").textContent = lives;
+    document.getElementById("showWins").textContent = wins;
+    document.getElementById("currentWord").textContent = wordArray;
 
 // user presses keys
 // record key presses into guesses[]
@@ -50,8 +52,9 @@ document.onkeyup = function(letterGuess) {
 
     
 if (lives === 0) {
-    alert("you lose");
     resetGame();
+    randomizer();
+    
 }
 
 else {
@@ -66,8 +69,16 @@ else {
     if (theLetter != hiddenArray[i]) {
         lives = (lives - 1);
         document.getElementById("showLives").textContent = lives;
+
+    } else if (wordArray === hiddenArray) {
+        wins = (wins + 1);
+        randomizer();
+        
+    
     }
 }
+
+
 }
 
 // if key press = not letter of word
